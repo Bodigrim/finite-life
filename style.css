@@ -1,0 +1,71 @@
+.left-bar {
+	float: left;
+	width: 30%;
+}
+
+.board {
+	border-top: 2px dashed green;
+	border-bottom: 2px dashed green;
+	border-left: 2px dashed blue;
+	border-right: 2px dashed blue;
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+
+.board td {
+	border-bottom: 2px solid black;
+	border-right: 2px solid black;
+	padding: 0;
+	width: 102px;
+	height: 102px;
+}
+
+.board td:last-child {
+	border-right: none;
+}
+
+.board tr:last-child td {
+	border-bottom: none;
+}
+
+.board td div {
+	border-radius: 40px;
+	display: none;
+	margin: 10px;
+	width: 80px;
+	height: 80px;
+}
+
+.alive {
+	animation: live 1s;
+	background: red;
+	box-shadow: 3px 3px 3px black;
+}
+
+.dead {
+	animation: die 1s;
+	background: white;
+	box-shadow: none;
+}
+
+@keyframes live {
+ from {background: white; box-shadow: 0 0 0 white;}
+ to {background: red; box-shadow: 3px 3px 3px black;}
+ }
+ 
+@keyframes die {
+ from {background: red; box-shadow: 3px 3px 3px black;}
+ to {background: white; box-shadow: 0 0 0 white;}
+ }
+ 
+.a {
+	border: 1px dashed black;
+	color: black;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 200%;
+	padding: 5px;
+	margin: 10px;
+	text-decoration: none;
+}
+ 

@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Conway's Game of Life on Finite Boards without Boundaries</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="left-bar">
+
+<form id="pattern-form">
+<input type="number" id="pattern-input" />
+<input type="submit" value="Run" />
+</form>
+
+<a href="#21979355"  class="a">21979355</a>
+<a href="#23962337"  class="a">23962337</a>
+<a href="#72987062"  class="a">72987062</a>
+
+</div>
+
+<table class="board" id="board">
+<tr><td></td></tr>
+</table>
+
+<script>
+	var size = 6;
+	var topology = "klein";
+</script>
+<script src="jquery.js"></script>
+<script src="evolve.js"></script>
+</body>
+</html>
