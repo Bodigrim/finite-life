@@ -1,6 +1,19 @@
-Normal workflow is as follows.
+Well-known Conway's Game of Life is usually played on the infinite plane board. But one can also consider it on finite surfaces without boundaries: the torus, the Klein bottle and the projective plane.
 
-1. Run ./life to produce a list of quasiperiods.
+The aim of this repository is to search for stable and repeating patterns on such boards exhaustively and effectively.
 
-{if($2>0) periods[$2]++}
-END {for(i in periods) print i, periods[i]}
+Source code can be found in src/. Just run
+
+make clean
+# Produce code for given board's size and topology
+make all N=[1..8] TOPOLOGY=[torus|klein|projective]
+# Compute list of periodical patterns and save it to life.dump
+./life life.dump
+# Calculate periods
+cat life.dump | ./undump > life.undump
+# Overview found periods
+./stat.awk life.undump | sort -n
+
+Detailed description of the algorithm will be available soon.
+
+In undump/ one can find the lists of found patterns for N=2..6 and all three topologies. Each line of the list contains a pattern (encoded as binary sequence) and its period.
