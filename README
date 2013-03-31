@@ -1,0 +1,6 @@
+Normal workflow is as follows.
+
+1. Run ./life to produce a list of quasiperiods.
+
+{if($2>0) periods[$2]++}
+END {for(i in periods) print i, periods[i]}
